@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./mainStyle.css";
+import image1 from "../../../public/images/Admin Dashboard.jpg";
 import { AnimatePresence, motion } from "framer-motion";
 const myPojects = [
   {
@@ -8,7 +9,7 @@ const myPojects = [
     subTitle:
       "Admin dashboard with user-friendly interface, Nivo charts fordynamic data visualization, and FullCalendar for scheduling and event management",
     categry: "react",
-    imgPath: "../../../public/images/Admin Dashboard.jpg",
+    imgPath: {image1}
 
     linkGhup: "https://github.com/Abdullahhosny58/AdminDashboard",
     link: "https://admin-dashboard-tan-alpha.vercel.app/",
