@@ -3,6 +3,7 @@ import "./hero.css";
 import devAnimation from "../../animation/dev/dev.json";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import image from "./image/me.png";
 
 const Hero = () => {
   const lottieRef = useRef();
@@ -14,7 +15,7 @@ const Hero = () => {
             initial={{ transform: "scale(0)" }}
             animate={{ transform: "scale(1.1)" }}
             transition={{ damping: 6, type: "spring", stiffness: 100 }}
-            src="../../../public/me.png"
+            src={image}
             className="avtar"
             alt=""
           />
