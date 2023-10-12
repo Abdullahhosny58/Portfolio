@@ -8,7 +8,7 @@ const myPojects = [
     subTitle:
       "Admin dashboard with user-friendly interface, Nivo charts fordynamic data visualization, and FullCalendar for scheduling and event management",
     categry: "react",
-    imgPath: "./../../../public/images/Admin Dashboard.jpg",
+    imgPath: "../../../public/images/Admin Dashboard.jpg",
 
     linkGhup: "https://github.com/Abdullahhosny58/AdminDashboard",
     link: "https://admin-dashboard-tan-alpha.vercel.app/",
@@ -19,8 +19,7 @@ const myPojects = [
     subTitle:
       "E-commerce app, focusing on user experience, and performance optimization Frontend In: React.js, MUI, Redux, Framer Motion Backend In: Strapi framework",
     categry: "react",
-    imgPath:
-      "./../../../public/images/React Ecommerce Project With Backend.jpg",
+    imgPath: "../../../public/images/React Ecommerce Project With Backend.jpg",
     linkGhup:
       "https://github.com/Abdullahhosny58/React-E-commerce-project-with-Backend",
     link: "https://github.com/Abdullahhosny58/React-E-commerce-project-with-Backend",
@@ -31,7 +30,7 @@ const myPojects = [
     subTitle:
       "This exceptional e-commerce platform was meticulously developed using the power of React.js and React Bootstrap, resulting in a stunning and user-friendly interface.",
     categry: "react",
-    imgPath: "./../../../public/images/Basic E-commerce Application.png",
+    imgPath: "../../../public/images/Basic E-commerce Application.png",
     linkGhup: "https://github.com/Abdullahhosny58/Basic-E-commerce-App",
     link: "https://basic-e-commerce-idczk47sl-kokohosny18-gmailcom.vercel.app/",
   },
@@ -41,7 +40,7 @@ const myPojects = [
     subTitle:
       " Vanilla JavaScript, HTML, CSS, Bootstrap,inviting users to explore and plan their next adventure with ease   resulting in a stunning and user-friendly interface With a focus on simplicity and efficiency  ",
     categry: "js",
-    imgPath: "./../../../public/images/Travel Site.png",
+    imgPath: "../../../public/images/Travel Site.png",
     linkGhup: "https://github.com/Abdullahhosny58/Travel-Site",
     link: "https://abdullahhosny58.github.io/Travel-Site/",
   },
@@ -51,7 +50,7 @@ const myPojects = [
     subTitle:
       "This product management system is expertly developed using a combination of js, HTML, CSS, and Bootstrap.You can add element,subtract,repeated,you can search",
     categry: "js",
-    imgPath: "./../../../public/images/Product Management System.png",
+    imgPath: "../../../public/images/Product Management System.png",
     linkGhup: "https://github.com/Abdullahhosny58/Product-Management-System",
     link: "https://abdullahhosny58.github.io/Product-Management-System/",
   },
@@ -62,7 +61,7 @@ const myPojects = [
     subTitle:
       "This Image Editors expertly developed using a combination of JS, HTML, CSS, Bootstrap, Offering a range of editing features such as Saturation, Contrast, Brightness, Grayscale, Blur, and Hue Rotate.",
     categry: "js",
-    imgPath: "./../../../public/images/image ed.png",
+    imgPath: "../../../public/images/image ed.png",
     linkGhup: "https://github.com/Abdullahhosny58/Image-Editor-JS",
     link: "https://abdullahhosny58.github.io/Image-Editor-JS/Index.html",
   },
@@ -72,7 +71,7 @@ const myPojects = [
     subTitle:
       "This  Hangman game expertly developed using a combination of JS, HTML, CSS, Bootstrap The Hangman game Provides players with a fun and challenging time",
     categry: "js",
-    imgPath: "./../../../public/images/hang man.png",
+    imgPath: "../../../public/images/hang man.png",
     linkGhup: "https://github.com/Abdullahhosny58/Hangman-Game",
     link: "https://abdullahhosny58.github.io/Hangman-Game/inde.html",
   },
@@ -82,7 +81,7 @@ const myPojects = [
     subTitle:
       "This IPHONE STORE expertly developed using a combination of JS, HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
     categry: "js",
-    imgPath: "./../../../public/images/iphone store.png",
+    imgPath: "../../../public/images/iphone store.png",
     linkGhup: "https://github.com/Abdullahhosny58/IPHONE-STORE",
     link: "https://abdullahhosny58.github.io/IPHONE-STORE/",
   },
@@ -92,7 +91,7 @@ const myPojects = [
     subTitle:
       "This Kasper website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
     categry: "css",
-    imgPath: "./../../../public/images/Kasper.png",
+    imgPath: "../../../public/images/Kasper.png",
     linkGhup: "https://github.com/Abdullahhosny58/Kasper-web2",
     link: "https://abdullahhosny58.github.io/Kasper-web2/",
   },
@@ -102,7 +101,7 @@ const myPojects = [
     subTitle:
       "This  bondi website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
     categry: "css",
-    imgPath: "./../../../public/images/crat website.png",
+    imgPath: "../../../public/images/crat website.png",
     linkGhup: "https://github.com/Abdullahhosny58/Creativit-web",
     link: "https://abdullahhosny58.github.io/Creativit-web/",
   },
@@ -112,7 +111,7 @@ const myPojects = [
     subTitle:
       "This Loen website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
     categry: "css",
-    imgPath: "./../../../public/images/leone.png",
+    imgPath: "../../../public/images/leone.png",
     linkGhup: "https://github.com/Abdullahhosny58/new-wepsite-Loen-Template-1",
     link: "https://abdullahhosny58.github.io/new-wepsite-Loen-Template-1/",
   },
