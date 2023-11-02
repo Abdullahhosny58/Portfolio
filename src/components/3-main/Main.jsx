@@ -53,7 +53,7 @@ const myPojects = [
   },
 
   {
-    id: 3,
+    id: 4,
     projectTitle: "Valorant Store",
     subTitle:
       "Valorant Store, focusing on user experience, and performance optimization Frontend In: React.js, MUI",
@@ -64,7 +64,7 @@ const myPojects = [
   },
 
   {
-    id: 4,
+    id: 5,
     projectTitle: "Travel Site",
     subTitle:
       " Vanilla JavaScript, HTML, CSS, Bootstrap,inviting users to explore and plan their next adventure with ease   resulting in a stunning and user-friendly interface With a focus on simplicity and efficiency  ",
@@ -74,7 +74,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Travel-Site/",
   },
   {
-    id: 5,
+    id: 6,
     projectTitle: "Product Management System ",
     subTitle:
       "This product management system is expertly developed using a combination of js, HTML, CSS, and Bootstrap.You can add element,subtract,repeated,you can search",
@@ -85,7 +85,7 @@ const myPojects = [
   },
 
   {
-    id: 6,
+    id: 7,
     projectTitle: "Image Editors",
     subTitle:
       "This Image Editors expertly developed using a combination of JS, HTML, CSS, Bootstrap, Offering a range of editing features such as Saturation, Contrast, Brightness, Grayscale, Blur, and Hue Rotate.",
@@ -95,7 +95,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Image-Editor-JS/Index.html",
   },
   {
-    id: 7,
+    id: 8,
     projectTitle: "Hangman Game",
     subTitle:
       "This  Hangman game expertly developed using a combination of JS, HTML, CSS, Bootstrap The Hangman game Provides players with a fun and challenging time",
@@ -105,7 +105,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Hangman-Game/inde.html",
   },
   {
-    id: 8,
+    id: 9,
     projectTitle: "IPHONE STORE",
     subTitle:
       "This IPHONE STORE expertly developed using a combination of JS, HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -115,7 +115,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/IPHONE-STORE/",
   },
   {
-    id: 9,
+    id: 10,
     projectTitle: "Kasper website ",
     subTitle:
       "This Kasper website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -125,7 +125,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Kasper-web2/",
   },
   {
-    id: 10,
+    id: 11,
     projectTitle: "bondi website ",
     subTitle:
       "This  bondi website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -135,7 +135,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Creativit-web/",
   },
   {
-    id: 11,
+    id: 12,
     projectTitle: "Loen website ",
     subTitle:
       "This Loen website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
