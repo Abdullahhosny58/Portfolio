@@ -11,10 +11,25 @@ import image8 from "../../../public/images/iphone-store.png";
 import image9 from "../../../public/images/Kasper.png";
 import image10 from "../../../public/images/bondi.png";
 import image11 from "../../../public/images/leone.png";
+import baytAlebaaTask from "../../../public/images/baytAlebaaTask.png";
+import valorantStore from "../../../public/images/valorantStore.png";
+
 import { AnimatePresence, motion } from "framer-motion";
 const myPojects = [
   {
     id: 1,
+    projectTitle: "Animation AirPods",
+    subTitle:
+      "Animation AirPodsfocusing on user experience, and performance optimization Frontend In: React.js, MUI, , Framer Motion ",
+    categry: "react",
+    imgPath: baytAlebaaTask,
+
+    linkGhup: "https://github.com/Abdullahhosny58/baytAlebaaTask",
+    link: "https://bayt-alebaa-task.vercel.app/",
+  },
+
+  {
+    id: 2,
     projectTitle: "Admin Dashboard",
     subTitle:
       "Admin dashboard with user-friendly interface, Nivo charts fordynamic data visualization, and FullCalendar for scheduling and event management",
@@ -24,8 +39,9 @@ const myPojects = [
     linkGhup: "https://github.com/Abdullahhosny58/AdminDashboard",
     link: "https://admin-dashboard-tan-alpha.vercel.app/",
   },
+
   {
-    id: 2,
+    id: 3,
     projectTitle: "React Ecommerce, Backend",
     subTitle:
       "E-commerce app, focusing on user experience, and performance optimization Frontend In: React.js, MUI, Redux, Framer Motion Backend In: Strapi framework",
@@ -35,16 +51,18 @@ const myPojects = [
       "https://github.com/Abdullahhosny58/React-E-commerce-project-with-Backend",
     link: "https://github.com/Abdullahhosny58/React-E-commerce-project-with-Backend",
   },
+
   {
     id: 3,
-    projectTitle: "Basic Ecommerce Application",
+    projectTitle: "Valorant Store",
     subTitle:
-      "This exceptional e-commerce platform was meticulously developed using the power of React.js and React Bootstrap, resulting in a stunning and user-friendly interface.",
+      "Valorant Store, focusing on user experience, and performance optimization Frontend In: React.js, MUI",
     categry: "react",
-    imgPath: image3,
-    linkGhup: "https://github.com/Abdullahhosny58/Basic-E-commerce-App",
-    link: "https://basic-e-commerce-idczk47sl-kokohosny18-gmailcom.vercel.app/",
+    imgPath: valorantStore,
+    linkGhup: "https://github.com/Abdullahhosny58/valorantStore",
+    link: "https://valorant-store-ten.vercel.app/",
   },
+
   {
     id: 4,
     projectTitle: "Travel Site",
@@ -126,16 +144,6 @@ const myPojects = [
     linkGhup: "https://github.com/Abdullahhosny58/new-wepsite-Loen-Template-1",
     link: "https://abdullahhosny58.github.io/new-wepsite-Loen-Template-1/",
   },
-  // {
-  //   id: 6,
-  //   projectTitle: "html project",
-  // subTitle:'',
-  //   categry: "css",
-  //   imgPath: "a",
-  //   linkGhup:
-  //     "https://github.com/alielrayes/React-portfolio-website/tree/final-project/public",
-  // link: "https://github.com/alielrayes/React-portfolio-website/tree/final-project/public",
-  // },
 ];
 
 const Main = () => {
