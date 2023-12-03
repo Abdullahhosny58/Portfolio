@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./mainStyle.css";
 import image1 from "../../../public/images/Admin-Dashboard.jpg";
 import image2 from "../../../public/images/React-Ecommerce-Project-With-Backend.jpg";
-import image3 from "../../../public/images/Basic-E-commerce-Application.png";
 import image4 from "../../../public/images/Travel-Site.png";
 import image5 from "../../../public/images/Product-Management-System.png";
 import image6 from "../../../public/images/image-ed.png";
