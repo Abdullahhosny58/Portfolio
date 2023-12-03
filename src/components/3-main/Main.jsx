@@ -14,10 +14,24 @@ import image11 from "../../../public/images/leone.png";
 import baytAlebaaTask from "../../../public/images/baytAlebaaTask.png";
 import valorantStore from "../../../public/images/valorantStore.png";
 
+import fitnessApplication from "../../../public/images/Fitness Application.png";
+
 import { AnimatePresence, motion } from "framer-motion";
 const myPojects = [
   {
     id: 1,
+    projectTitle: "Fitness Application",
+    subTitle:
+      "Fitness Application on user experience, and performance optimization Frontend In: React.js,TypeScript, Tailwind Css, , Framer Motion ",
+    categry: "react",
+    imgPath: fitnessApplication,
+
+    linkGhup: "https://github.com/Abdullahhosny58/FitnessApplication",
+    link: "https://fitness-application-ashy.vercel.app/",
+  },
+
+  {
+    id: 2,
     projectTitle: "Animation AirPods",
     subTitle:
       "Animation AirPodsfocusing on user experience, and performance optimization Frontend In: React.js, MUI, , Framer Motion ",
@@ -29,7 +43,7 @@ const myPojects = [
   },
 
   {
-    id: 2,
+    id: 3,
     projectTitle: "Admin Dashboard",
     subTitle:
       "Admin dashboard with user-friendly interface, Nivo charts fordynamic data visualization, and FullCalendar for scheduling and event management",
@@ -41,7 +55,7 @@ const myPojects = [
   },
 
   {
-    id: 3,
+    id: 4,
     projectTitle: "React Ecommerce, Backend",
     subTitle:
       "E-commerce app, focusing on user experience, and performance optimization Frontend In: React.js, MUI, Redux, Framer Motion Backend In: Strapi framework",
@@ -53,7 +67,7 @@ const myPojects = [
   },
 
   {
-    id: 4,
+    id: 5,
     projectTitle: "Valorant Store",
     subTitle:
       "Valorant Store, focusing on user experience, and performance optimization Frontend In: React.js, MUI",
@@ -64,7 +78,7 @@ const myPojects = [
   },
 
   {
-    id: 5,
+    id: 6,
     projectTitle: "Travel Site",
     subTitle:
       " Vanilla JavaScript, HTML, CSS, Bootstrap,inviting users to explore and plan their next adventure with ease   resulting in a stunning and user-friendly interface With a focus on simplicity and efficiency  ",
@@ -74,7 +88,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Travel-Site/",
   },
   {
-    id: 6,
+    id: 7,
     projectTitle: "Product Management System ",
     subTitle:
       "This product management system is expertly developed using a combination of js, HTML, CSS, and Bootstrap.You can add element,subtract,repeated,you can search",
@@ -85,7 +99,7 @@ const myPojects = [
   },
 
   {
-    id: 7,
+    id: 8,
     projectTitle: "Image Editors",
     subTitle:
       "This Image Editors expertly developed using a combination of JS, HTML, CSS, Bootstrap, Offering a range of editing features such as Saturation, Contrast, Brightness, Grayscale, Blur, and Hue Rotate.",
@@ -95,7 +109,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Image-Editor-JS/Index.html",
   },
   {
-    id: 8,
+    id: 9,
     projectTitle: "Hangman Game",
     subTitle:
       "This  Hangman game expertly developed using a combination of JS, HTML, CSS, Bootstrap The Hangman game Provides players with a fun and challenging time",
@@ -105,7 +119,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Hangman-Game/inde.html",
   },
   {
-    id: 9,
+    id: 10,
     projectTitle: "IPHONE STORE",
     subTitle:
       "This IPHONE STORE expertly developed using a combination of JS, HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -115,7 +129,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/IPHONE-STORE/",
   },
   {
-    id: 10,
+    id: 11,
     projectTitle: "Kasper website ",
     subTitle:
       "This Kasper website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -125,7 +139,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Kasper-web2/",
   },
   {
-    id: 11,
+    id: 12,
     projectTitle: "bondi website ",
     subTitle:
       "This  bondi website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -135,7 +149,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Creativit-web/",
   },
   {
-    id: 12,
+    id: 13,
     projectTitle: "Loen website ",
     subTitle:
       "This Loen website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
