@@ -12,6 +12,8 @@ import image10 from "../../../public/images/bondi.png";
 import image11 from "../../../public/images/leone.png";
 import baytAlebaaTask from "../../../public/images/baytAlebaaTask.png";
 import valorantStore from "../../../public/images/valorantStore.png";
+import ocean from "../../../public/images/ocean.png";
+import digitalMarketplace from "../../../public/images/Digital Marketplace.png";
 
 import fitnessApplication from "../../../public/images/Fitness Application.png";
 
@@ -19,42 +21,18 @@ import { AnimatePresence, motion } from "framer-motion";
 const myPojects = [
   {
     id: 1,
-    projectTitle: "Fitness Application",
+    projectTitle: "Digital Marketplace",
     subTitle:
-      "Fitness Application on user experience, and performance optimization Frontend In: React.js,TypeScript, Tailwind Css, , Framer Motion ",
-    categry: "react",
-    imgPath: fitnessApplication,
+      "Digital Marketplace focusing on user experience, and performance optimization with Next.js 14, TypeScript , React, tRPC, Tailwind Css, MongoDB, Payload ",
+    categry: "Next",
+    imgPath: digitalMarketplace,
 
-    linkGhup: "https://github.com/Abdullahhosny58/FitnessApplication",
-    link: "https://fitness-application-ashy.vercel.app/",
+    linkGhup: "https://github.com/Abdullahhosny58/Digital-Marketplace",
+    link: "https://github.com/Abdullahhosny58/Digital-Marketplace",
   },
 
   {
     id: 2,
-    projectTitle: "Animation AirPods",
-    subTitle:
-      "Animation AirPodsfocusing on user experience, and performance optimization Frontend In: React.js, MUI, , Framer Motion ",
-    categry: "react",
-    imgPath: baytAlebaaTask,
-
-    linkGhup: "https://github.com/Abdullahhosny58/baytAlebaaTask",
-    link: "https://bayt-alebaa-task.vercel.app/",
-  },
-
-  {
-    id: 3,
-    projectTitle: "Admin Dashboard",
-    subTitle:
-      "Admin dashboard with user-friendly interface, Nivo charts fordynamic data visualization, and FullCalendar for scheduling and event management",
-    categry: "react",
-    imgPath: image1,
-
-    linkGhup: "https://github.com/Abdullahhosny58/AdminDashboard",
-    link: "https://admin-dashboard-tan-alpha.vercel.app/",
-  },
-
-  {
-    id: 4,
     projectTitle: "React Ecommerce, Backend",
     subTitle:
       "E-commerce app, focusing on user experience, and performance optimization Frontend In: React.js, MUI, Redux, Framer Motion Backend In: Strapi framework",
@@ -66,7 +44,57 @@ const myPojects = [
   },
 
   {
+    id: 3,
+    projectTitle: "Animation AirPods",
+    subTitle:
+      "Animation AirPodsfocusing on user experience, and performance optimization Frontend In: React.js, MUI, , Framer Motion ",
+    categry: "react",
+    imgPath: baytAlebaaTask,
+
+    linkGhup: "https://github.com/Abdullahhosny58/baytAlebaaTask",
+    link: "https://bayt-alebaa-task.vercel.app/",
+  },
+
+  {
+    id: 4,
+    projectTitle: "Ocean landing page",
+    subTitle:
+      "Ocean landing page on user experience, and performance optimization Frontend In: Next.js 14, TypeScript ,Tailwind Css ,Framer Motion ",
+    categry: "Next",
+    imgPath: ocean,
+
+    linkGhup: "https://github.com/Abdullahhosny58/Ocean",
+    link: "https://ocean-sigma.vercel.app/",
+  },
+
+  // ================================================
+
+  {
     id: 5,
+    projectTitle: "Fitness Application",
+    subTitle:
+      "Fitness Application on user experience, and performance optimization Frontend In: React.js,TypeScript, Tailwind Css, , Framer Motion ",
+    categry: "react",
+    imgPath: fitnessApplication,
+
+    linkGhup: "https://github.com/Abdullahhosny58/FitnessApplication",
+    link: "https://fitness-application-ashy.vercel.app/",
+  },
+
+  {
+    id: 6,
+    projectTitle: "Admin Dashboard",
+    subTitle:
+      "Admin dashboard with user-friendly interface, Nivo charts fordynamic data visualization, and FullCalendar for scheduling and event management",
+    categry: "react",
+    imgPath: image1,
+
+    linkGhup: "https://github.com/Abdullahhosny58/AdminDashboard",
+    link: "https://admin-dashboard-tan-alpha.vercel.app/",
+  },
+
+  {
+    id: 7,
     projectTitle: "Valorant Store",
     subTitle:
       "Valorant Store, focusing on user experience, and performance optimization Frontend In: React.js, MUI",
@@ -77,7 +105,7 @@ const myPojects = [
   },
 
   {
-    id: 6,
+    id: 8,
     projectTitle: "Travel Site",
     subTitle:
       " Vanilla JavaScript, HTML, CSS, Bootstrap,inviting users to explore and plan their next adventure with ease   resulting in a stunning and user-friendly interface With a focus on simplicity and efficiency  ",
@@ -87,7 +115,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Travel-Site/",
   },
   {
-    id: 7,
+    id: 9,
     projectTitle: "Product Management System ",
     subTitle:
       "This product management system is expertly developed using a combination of js, HTML, CSS, and Bootstrap.You can add element,subtract,repeated,you can search",
@@ -98,7 +126,7 @@ const myPojects = [
   },
 
   {
-    id: 8,
+    id: 10,
     projectTitle: "Image Editors",
     subTitle:
       "This Image Editors expertly developed using a combination of JS, HTML, CSS, Bootstrap, Offering a range of editing features such as Saturation, Contrast, Brightness, Grayscale, Blur, and Hue Rotate.",
@@ -108,7 +136,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Image-Editor-JS/Index.html",
   },
   {
-    id: 9,
+    id: 11,
     projectTitle: "Hangman Game",
     subTitle:
       "This  Hangman game expertly developed using a combination of JS, HTML, CSS, Bootstrap The Hangman game Provides players with a fun and challenging time",
@@ -118,7 +146,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Hangman-Game/inde.html",
   },
   {
-    id: 10,
+    id: 12,
     projectTitle: "IPHONE STORE",
     subTitle:
       "This IPHONE STORE expertly developed using a combination of JS, HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -128,7 +156,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/IPHONE-STORE/",
   },
   {
-    id: 11,
+    id: 13,
     projectTitle: "Kasper website ",
     subTitle:
       "This Kasper website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -138,7 +166,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Kasper-web2/",
   },
   {
-    id: 12,
+    id: 14,
     projectTitle: "bondi website ",
     subTitle:
       "This  bondi website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -148,7 +176,7 @@ const myPojects = [
     link: "https://abdullahhosny58.github.io/Creativit-web/",
   },
   {
-    id: 13,
+    id: 15,
     projectTitle: "Loen website ",
     subTitle:
       "This Loen website expertly developed using a combination of  HTML, CSS,Bootstrap attractive user interface,providing a seamless experience to users",
@@ -175,6 +203,20 @@ const Main = () => {
           {" "}
           all projects{" "}
         </button>
+        <button
+          onClick={() => {
+            setcurrentActive("Next");
+            const newArr4 = myPojects.filter((item) => {
+              return item.categry === "Next";
+            });
+            setArr(newArr4);
+          }}
+          className={currentActive === "Next" ? "active" : null}
+        >
+          {" "}
+          Next js
+        </button>
+        {/* ////////////////////////// */}
 
         <button
           onClick={() => {
@@ -218,20 +260,6 @@ const Main = () => {
         </button>
 
         {/* <button
-          onClick={() => {
-            setcurrentActive("Next");
-            const newArr4 = myPojects.filter((item) => {
-              return item.categry === "next";
-            });
-            setArr(newArr4);
-          }}
-          className={currentActive === "Next" ? "active" : null}
-        >
-          {" "}
-          Next js
-        </button>
-
-        <button
           onClick={() => {
             setcurrentActive("mern");
             const newArr5 = myPojects.filter((item) => {
