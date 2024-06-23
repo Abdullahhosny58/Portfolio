@@ -27,7 +27,7 @@ const Hero = () => {
           transition={{ duration: 2 }}
           className="title"
         >
-          Software designer, React Developer
+          Software Developer | Frontend Developer React js || Next js
         </motion.h1>
 
         <motion.p
@@ -36,11 +36,13 @@ const Hero = () => {
           transition={{ duration: 2 }}
           className="subTitle"
         >
-          {" "}
-          I'm Abdullah Hosny, a React.js software developer based in Egypt,
-          dedicated to crafting visually appealing applications with a focus on
-          responsive design, consistent styling, layout and grid systems,
-          typography, color scheme, component libraries, animation and
+          Im Abdullah Hosny, a React.js software developer with 1 years of
+          experience , based in Egypt. Im passionate about crafting visually
+          appealing and responsive web applications, leveraging my expertise in
+          front-end development and proficiency in technologies like React.js,
+          Next.js, TypeScript, Redux, Material-UI, React Bootstrap, and Tailwind
+          CSS. My focus areas include consistent styling, layout and grid
+          systems, typography, color schemes, component libraries, animation and
           transitions, and the use of high-quality images and icons.
         </motion.p>
         <link></link>
