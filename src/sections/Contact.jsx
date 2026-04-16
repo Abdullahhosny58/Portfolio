@@ -15,7 +15,7 @@ function InputField({ label, id, type = 'text', textarea, value, onChange, place
     width: '100%',
     padding: '13px 16px',
     borderRadius: 'var(--r-md)',
-    border: `1.5px solid ${focused ? 'rgba(99,102,241,0.5)' : 'var(--clr-border)'}`,
+    border: '1.5px solid ' + (focused ? 'rgba(99,102,241,0.5)' : 'var(--clr-border)'),
     background: focused ? 'rgba(99,102,241,0.05)' : 'rgba(255,255,255,0.03)',
     color: 'var(--clr-text)',
     fontSize: '14px',
@@ -105,10 +105,10 @@ export function Contact() {
 
             {/* Contact Info Items */}
             {[
-              { icon: Mail,   labelKey: 'contact.info.email_label',       valueKey: 'contact.info.email',       href: `mailto:${t('contact.info.email')}` },
-              { icon: MapPin, labelKey: 'contact.info.location_label',    valueKey: 'contact.info.location',    href: null },
+              { icon: Mail,        labelKey: 'contact.info.email_label',        valueKey: 'contact.info.email',        href: 'mailto:' + t('contact.info.email') },
+              { icon: MapPin,      labelKey: 'contact.info.location_label',     valueKey: 'contact.info.location',     href: null },
               { icon: CheckCircle, labelKey: 'contact.info.availability_label', valueKey: 'contact.info.availability', href: null },
-            ].map(({ icon: Icon, labelKey, valueKey, href }, i) => (
+            ].map(({ icon: Icon, labelKey, valueKey, href }) => (
               <motion.div
                 key={labelKey}
                 variants={staggerItem}
@@ -175,48 +175,26 @@ export function Contact() {
               <p style={{ fontSize: '12px', color: 'var(--clr-text-2)', marginBottom: '16px', lineHeight: 1.6 }}>
                 {t('cv.subtitle')}
               </p>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <motion.a
-                  href="/cv-en.pdf"
-                  download
-                  whileHover={{ scale: 1.04, y: -1 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{
-                    flex: 1,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
-                    padding: '10px 14px',
-                    borderRadius: 'var(--r-md)',
-                    background: 'var(--grad-accent)',
-                    color: '#fff',
-                    fontSize: '12px', fontWeight: 600,
-                    boxShadow: '0 4px 16px rgba(99,102,241,0.3)',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  <Download size={13} />
-                  EN
-                </motion.a>
-                <motion.a
-                  href="/cv-ar.pdf"
-                  download
-                  whileHover={{ scale: 1.04, y: -1 }}
-                  whileTap={{ scale: 0.97 }}
-                  style={{
-                    flex: 1,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
-                    padding: '10px 14px',
-                    borderRadius: 'var(--r-md)',
-                    background: 'rgba(255,255,255,0.06)',
-                    color: 'var(--clr-text)',
-                    fontSize: '12px', fontWeight: 500,
-                    border: '1px solid var(--clr-border-2)',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  <Download size={13} />
-                  عربي
-                </motion.a>
-              </div>
+              <motion.a
+                href="/cv-en.pdf"
+                download="Abdullah-Hosny-CV.pdf"
+                whileHover={{ scale: 1.04, y: -1 }}
+                whileTap={{ scale: 0.97 }}
+                style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                  padding: '11px 20px',
+                  borderRadius: 'var(--r-md)',
+                  background: 'var(--grad-accent)',
+                  color: '#fff',
+                  fontSize: '13px', fontWeight: 600,
+                  boxShadow: '0 4px 16px rgba(99,102,241,0.3)',
+                  whiteSpace: 'nowrap',
+                  width: '100%',
+                }}
+              >
+                <Download size={14} />
+                {t('cv.download')}
+              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -235,7 +213,6 @@ export function Contact() {
             }}
           >
             {state.succeeded ? (
-              /* Success State */
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -270,7 +247,6 @@ export function Contact() {
                 </h3>
               </motion.div>
             ) : (
-              /* Form */
               <form onSubmit={handleFormspreeSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <InputField
                   id="name"
@@ -292,7 +268,6 @@ export function Contact() {
                   textarea
                   required
                 />
-
                 <motion.button
                   type="submit"
                   disabled={state.submitting}
@@ -331,7 +306,6 @@ export function Contact() {
                     </>
                   )}
                 </motion.button>
-
                 {state.errors && state.errors.length > 0 && (
                   <p style={{ color: '#f87171', fontSize: '13px', textAlign: 'center' }}>
                     {t('contact.form.error')}

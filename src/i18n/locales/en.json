@@ -10,7 +10,12 @@
   "hero": {
     "greeting": "Hello, I'm",
     "name": "Abdullah Hosny",
-    "roles": ["Frontend Developer", "React.js Engineer", "Next.js Specialist", "UI Craftsman"],
+    "roles": [
+      "Frontend Developer",
+      "React.js Engineer",
+      "Next.js Specialist",
+      "UI Craftsman"
+    ],
     "bio": "I build fast, accessible, and visually refined web experiences using React.js and Next.js.",
     "cta_projects": "View Projects",
     "cta_cv": "Download CV",
@@ -51,6 +56,7 @@
     "subtitle": "A collection of projects I've built — from full-stack apps to polished UIs.",
     "filters": {
       "all": "All",
+      "production": "Production",
       "nextjs": "Next.js",
       "react": "React",
       "javascript": "JavaScript",
@@ -86,8 +92,8 @@
     "label": "CV",
     "title": "Download My Resume",
     "subtitle": "Get a full overview of my skills, experience and projects.",
+    "download": "Download CV",
     "btn_en": "Download CV (English)",
-    "btn_ar": "تحميل السيرة الذاتية",
     "format": "PDF Format"
   },
   "footer": {
