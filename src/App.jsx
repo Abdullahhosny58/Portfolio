@@ -9,6 +9,8 @@ import { About } from './sections/About'
 import { Skills } from './sections/Skills'
 import { Projects } from './sections/Projects'
 import { Contact } from './sections/Contact'
+import { ParticleCanvas } from './components/ui/ParticleCanvas'
+import { CursorGlow } from './components/ui/CursorGlow'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
 import './styles/globals.css'
 import './styles/animations.css'
@@ -57,6 +59,8 @@ function App() {
   }, [i18n.language])
   return (
     <>
+      <ParticleCanvas />
+      <CursorGlow />
       <Navbar />
       <main style={{ position: 'relative', zIndex: 1 }}>
         <Hero />
