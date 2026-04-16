@@ -2,8 +2,30 @@
    PORTFOLIO — CONTENT DATA
    =================================================== */
 
-// ─── Projects ──────────────────────────────────────
+// Projects
 export const projects = [
+  {
+    id: 18,
+    title: 'WikiFood Platform',
+    subtitle: 'Full-scale multi-vendor food e-commerce marketplace with multi-supplier catalog, cart, checkout, and complete order lifecycle management.',
+    category: 'production',
+    tags: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    image: '/images/wikifood.png',
+    github: 'https://github.com/Abdullahhosny58',
+    live: 'https://wiki.themok.company',
+    featured: true,
+  },
+  {
+    id: 19,
+    title: 'PrintOut Platform',
+    subtitle: 'Scalable online print marketplace with custom product configuration, Google Drive uploads, banners, laser cutting, and full admin order dashboard.',
+    category: 'production',
+    tags: ['React.js', 'TypeScript', 'Redux', 'Tailwind CSS'],
+    image: '/images/printout.png',
+    github: 'https://github.com/Abdullahhosny58',
+    live: 'https://printout.solutions',
+    featured: true,
+  },
   {
     id: 1,
     title: 'Our E-Commerce App',
@@ -18,7 +40,7 @@ export const projects = [
   {
     id: 2,
     title: 'Pokemon Gallery',
-    subtitle: 'Interactive Pokémon browser with search, filter & detail views',
+    subtitle: 'Interactive Pokemon browser with search, filter & detail views',
     category: 'react',
     tags: ['React', 'TypeScript', 'MUI', 'REST API'],
     image: '/images/pokemon (1).png',
@@ -193,40 +215,37 @@ export const projects = [
   },
 ]
 
-// ─── Skills ────────────────────────────────────────
+// Skills
 export const skills = [
-  // Frontend
-  { name: 'React.js',     category: 'frontend',    icon: '⚛',  level: 90, color: '#61DAFB' },
-  { name: 'Next.js',      category: 'frameworks',  icon: '▲',  level: 85, color: '#ffffff' },
-  { name: 'TypeScript',   category: 'frontend',    icon: 'TS', level: 80, color: '#3178C6' },
-  { name: 'JavaScript',   category: 'frontend',    icon: 'JS', level: 92, color: '#F7DF1E' },
-  { name: 'HTML5',        category: 'frontend',    icon: '⬡',  level: 95, color: '#E34F26' },
-  { name: 'CSS3',         category: 'styling',     icon: '◈',  level: 90, color: '#1572B6' },
-  // Styling
-  { name: 'Tailwind CSS', category: 'styling',     icon: '≋',  level: 88, color: '#06B6D4' },
-  { name: 'MUI',          category: 'styling',     icon: '◉',  level: 85, color: '#007FFF' },
-  { name: 'Bootstrap',    category: 'styling',     icon: '⬡',  level: 85, color: '#7952B3' },
-  { name: 'Framer Motion',category: 'styling',     icon: '◎',  level: 75, color: '#BB4AFF' },
-  // State & Data
-  { name: 'Redux Toolkit',category: 'frontend',    icon: '◈',  level: 82, color: '#764ABC' },
-  { name: 'React Query',  category: 'frontend',    icon: '⊗',  level: 78, color: '#FF4154' },
-  // Tools
-  { name: 'Git',          category: 'tools',       icon: '⌥',  level: 88, color: '#F05032' },
-  { name: 'Vite',         category: 'tools',       icon: '⚡',  level: 85, color: '#646CFF' },
-  { name: 'Figma',        category: 'tools',       icon: '◈',  level: 70, color: '#F24E1E' },
-  { name: 'REST APIs',    category: 'tools',       icon: '⟳',  level: 88, color: '#00C4AF' },
+  { name: 'React.js',      category: 'frontend',   icon: 'Re', level: 90, color: '#61DAFB' },
+  { name: 'Next.js',       category: 'frameworks', icon: 'Nx', level: 85, color: '#ffffff' },
+  { name: 'TypeScript',    category: 'frontend',   icon: 'TS', level: 80, color: '#3178C6' },
+  { name: 'JavaScript',    category: 'frontend',   icon: 'JS', level: 92, color: '#F7DF1E' },
+  { name: 'HTML5',         category: 'frontend',   icon: 'H5', level: 95, color: '#E34F26' },
+  { name: 'CSS3',          category: 'styling',    icon: 'C3', level: 90, color: '#1572B6' },
+  { name: 'Tailwind CSS',  category: 'styling',    icon: 'TW', level: 88, color: '#06B6D4' },
+  { name: 'MUI',           category: 'styling',    icon: 'MU', level: 85, color: '#007FFF' },
+  { name: 'Bootstrap',     category: 'styling',    icon: 'BS', level: 85, color: '#7952B3' },
+  { name: 'Framer Motion', category: 'styling',    icon: 'FM', level: 75, color: '#BB4AFF' },
+  { name: 'Redux Toolkit', category: 'frontend',   icon: 'RX', level: 82, color: '#764ABC' },
+  { name: 'React Query',   category: 'frontend',   icon: 'RQ', level: 78, color: '#FF4154' },
+  { name: 'Git',           category: 'tools',      icon: 'Gt', level: 88, color: '#F05032' },
+  { name: 'Vite',          category: 'tools',      icon: 'Vt', level: 85, color: '#646CFF' },
+  { name: 'Figma',         category: 'tools',      icon: 'Fg', level: 70, color: '#F24E1E' },
+  { name: 'REST APIs',     category: 'tools',      icon: 'AP', level: 88, color: '#00C4AF' },
 ]
 
-// ─── Social Links ──────────────────────────────────
+// Social Links
 export const socials = [
   { label: 'GitHub',   icon: 'github',   url: 'https://github.com/Abdullahhosny58' },
   { label: 'LinkedIn', icon: 'linkedin', url: 'https://linkedin.com' },
   { label: 'Twitter',  icon: 'twitter',  url: 'https://twitter.com' },
 ]
 
-// ─── Filter Categories ─────────────────────────────
+// Filter Categories
 export const projectFilters = [
   { key: 'all',        labelKey: 'projects.filters.all' },
+  { key: 'production', labelKey: 'projects.filters.production' },
   { key: 'nextjs',     labelKey: 'projects.filters.nextjs' },
   { key: 'react',      labelKey: 'projects.filters.react' },
   { key: 'javascript', labelKey: 'projects.filters.javascript' },
