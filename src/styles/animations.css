@@ -1,0 +1,111 @@
+/* ===================================================
+   PORTFOLIO — KEYFRAME ANIMATIONS
+   =================================================== */
+
+/* ─── Float / Orb Drift ──────────────────────────── */
+@keyframes float-1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(30px, -25px) scale(1.05); }
+  66%       { transform: translate(-20px, 20px) scale(0.97); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  40%       { transform: translate(-35px, 30px) scale(1.08); }
+  80%       { transform: translate(25px, -20px) scale(0.95); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translate(0px, 0px); }
+  50%       { transform: translate(20px, -30px); }
+}
+
+/* ─── Typewriter Cursor ──────────────────────────── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── Glow Pulse ─────────────────────────────────── */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.2); }
+  50%       { box-shadow: 0 0 40px rgba(99, 102, 241, 0.45), 0 0 80px rgba(20, 184, 166, 0.15); }
+}
+
+/* ─── Shimmer ────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── Fade In Up ─────────────────────────────────── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Fade In ────────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Scale In ───────────────────────────────────── */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ─── Slide In Left ──────────────────────────────── */
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Slide In Right ─────────────────────────────── */
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Scroll Bounce ──────────────────────────────── */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%       { transform: translateY(8px); opacity: 0.5; }
+}
+
+/* ─── Draw Line ──────────────────────────────────── */
+@keyframes draw-line {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ─── Spin Slow ──────────────────────────────────── */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ─── Marquee (skill logos) ──────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── Bar Fill ───────────────────────────────────── */
+@keyframes bar-fill {
+  from { width: 0; }
+  to   { width: var(--bar-width, 80%); }
+}
+
+/* ─── Orbit ──────────────────────────────────────── */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+/* ─── Animation Utility Classes ──────────────────── */
+.anim-fade-up   { animation: fade-in-up 0.7s ease forwards; }
+.anim-fade-in   { animation: fade-in 0.5s ease forwards; }
+.anim-scale-in  { animation: scale-in 0.5s var(--t-spring) forwards; }
+.anim-glow      { animation: glow-pulse 3s ease-in-out infinite; }

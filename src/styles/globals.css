@@ -1,0 +1,209 @@
+/* ===================================================
+   PORTFOLIO — GLOBAL STYLES & DESIGN TOKENS
+   =================================================== */
+
+/* --- Google Fonts are loaded in index.html --- */
+
+/* ─── Design Tokens ─────────────────────────────── */
+:root {
+  /* Colors */
+  --clr-bg:           #050816;
+  --clr-bg-2:         #080d1c;
+  --clr-surface:      #0c1225;
+  --clr-surface-2:    #111827;
+  --clr-border:       rgba(255, 255, 255, 0.06);
+  --clr-border-2:     rgba(255, 255, 255, 0.10);
+
+  /* Accent */
+  --clr-accent:       #6366f1;
+  --clr-accent-light: #818cf8;
+  --clr-accent-dark:  #4f46e5;
+  --clr-teal:         #14b8a6;
+  --clr-teal-light:   #2dd4bf;
+  --clr-violet:       #a78bfa;
+
+  /* Text */
+  --clr-text:         #f1f5f9;
+  --clr-text-2:       #94a3b8;
+  --clr-text-3:       #64748b;
+
+  /* Gradients */
+  --grad-accent:      linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #14b8a6 100%);
+  --grad-text:        linear-gradient(135deg, #e0e7ff 0%, #818cf8 50%, #2dd4bf 100%);
+  --grad-card:        linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(20,184,166,0.04) 100%);
+  --grad-hero-orb-1:  radial-gradient(ellipse at center, rgba(99,102,241,0.35) 0%, transparent 70%);
+  --grad-hero-orb-2:  radial-gradient(ellipse at center, rgba(20,184,166,0.25) 0%, transparent 70%);
+  --grad-hero-orb-3:  radial-gradient(ellipse at center, rgba(139,92,246,0.20) 0%, transparent 70%);
+
+  /* Shadows */
+  --shadow-sm:        0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md:        0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.04);
+  --shadow-lg:        0 8px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05);
+  --shadow-glow:      0 0 40px rgba(99, 102, 241, 0.18);
+  --shadow-glow-teal: 0 0 32px rgba(20, 184, 166, 0.18);
+
+  /* Typography */
+  --font-display:  'Sora', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --font-mono:     'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-max:   1200px;
+  --container-pad:   clamp(16px, 5vw, 80px);
+
+  /* Radii */
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   16px;
+  --r-xl:   24px;
+  --r-full: 9999px;
+
+  /* Transitions */
+  --t-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --t-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --t-slow:   500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --t-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Navbar */
+  --nav-height: 72px;
+}
+
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  font-family: 'Sora', 'Cairo', 'Tajawal', var(--font-body);
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol { list-style: none; }
+
+/* ─── Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--clr-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--clr-surface-2);
+  border-radius: var(--r-full);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--clr-accent); }
+
+/* ─── Selection ─────────────────────────────────── */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: var(--clr-text);
+}
+
+/* ─── Container ─────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* ─── Section Base ───────────────────────────────── */
+.section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+/* ─── Typography Utilities ───────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); }
+
+.gradient-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Background Grain ───────────────────────────── */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Glass Card ─────────────────────────────────── */
+.glass-card {
+  background: rgba(13, 18, 37, 0.7);
+  border: 1px solid var(--clr-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--r-lg);
+}
+
+.glass-card:hover {
+  border-color: var(--clr-border-2);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ─── Focus Visible ──────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Reduced Motion ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Reveal Animation Classes ───────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}

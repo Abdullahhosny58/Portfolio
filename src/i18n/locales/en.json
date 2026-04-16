@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cv": "Download CV",
+    "lang": "عربي"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Abdullah Hosny",
+    "roles": ["Frontend Developer", "React.js Engineer", "Next.js Specialist", "UI Craftsman"],
+    "bio": "I build fast, accessible, and visually refined web experiences using React.js and Next.js.",
+    "cta_projects": "View Projects",
+    "cta_cv": "Download CV",
+    "scroll": "Scroll down",
+    "location": "Based in Egypt",
+    "available": "Available for work"
+  },
+  "about": {
+    "label": "About Me",
+    "title": "Crafting digital experiences with code",
+    "para1": "I'm Abdullah Hosny, a frontend developer with a passion for building polished, performant, and accessible web applications. I specialize in React.js and Next.js, turning complex ideas into elegant digital products.",
+    "para2": "With hands-on experience across e-commerce, dashboards, landing pages, and SaaS products, I bring both technical depth and design sensitivity to every project I work on.",
+    "stats": {
+      "experience": "1+",
+      "experience_label": "Year of Experience",
+      "projects": "17+",
+      "projects_label": "Projects Delivered",
+      "tech": "10+",
+      "tech_label": "Technologies"
+    },
+    "stack": "Tech Stack"
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "Technologies I work with",
+    "subtitle": "A curated set of tools I use to build modern web applications.",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "frameworks": "Frameworks",
+      "tools": "Tools & DevOps",
+      "styling": "Styling"
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Selected Work",
+    "subtitle": "A collection of projects I've built — from full-stack apps to polished UIs.",
+    "filters": {
+      "all": "All",
+      "nextjs": "Next.js",
+      "react": "React",
+      "javascript": "JavaScript",
+      "html": "HTML & CSS"
+    },
+    "live": "Live",
+    "code": "Code",
+    "view_all": "View All Projects"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's work together",
+    "subtitle": "Have a project in mind? I'd love to hear about it.",
+    "info": {
+      "email_label": "Email",
+      "email": "abdullahhhosny58@gmail.com",
+      "location_label": "Location",
+      "location": "Egypt",
+      "availability_label": "Availability",
+      "availability": "Open to opportunities"
+    },
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "cv": {
+    "label": "CV",
+    "title": "Download My Resume",
+    "subtitle": "Get a full overview of my skills, experience and projects.",
+    "btn_en": "Download CV (English)",
+    "btn_ar": "تحميل السيرة الذاتية",
+    "format": "PDF Format"
+  },
+  "footer": {
+    "made": "Designed & built by",
+    "name": "Abdullah Hosny",
+    "rights": "All rights reserved.",
+    "links": {
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  }
+}
