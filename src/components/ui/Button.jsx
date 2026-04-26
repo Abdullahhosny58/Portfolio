@@ -21,9 +21,9 @@ const styles = {
     padding: '12px 24px',
   },
   primary: {
-    background: 'var(--grad-accent)',
-    color: '#fff',
-    boxShadow: '0 4px 24px rgba(99,102,241,0.35)',
+    background: '#c8f551',
+    color: '#080808',
+    boxShadow: '0 4px 24px rgba(200,245,81,0.25)',
   },
   secondary: {
     background: 'transparent',

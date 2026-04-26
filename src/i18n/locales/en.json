@@ -1,6 +1,8 @@
 {
   "nav": {
+    "hero": "Home",
     "about": "About",
+    "experience": "Experience",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact",
@@ -36,7 +38,53 @@
       "tech": "10+",
       "tech_label": "Technologies"
     },
-    "stack": "Tech Stack"
+    "stack": "Tech Stack",
+    "open_to_work": "Open to Work"
+  },
+  "experience": {
+    "label": "Experience",
+    "title": "Where I've worked",
+    "index": "03",
+    "present": "Present",
+    "full_time": "Full-time",
+    "internship": "Internship",
+    "remote": "Remote",
+    "jobs": [
+      {
+        "company": "The Mok Company",
+        "role": "Frontend Developer",
+        "type": "Full-time · Remote",
+        "period": "Jun 2025 – Present",
+        "points": [
+          "Engineered WikiFood — a full-scale multi-vendor food e-commerce platform with multi-supplier catalog, real-time cart, checkout, and end-to-end order lifecycle tracking.",
+          "Built PrintOut — a scalable print marketplace with Google Drive upload, custom print configuration, and full admin order management.",
+          "Architected reusable component libraries in React.js and Next.js; integrated REST APIs powering complex marketplace workflows; optimized performance via code splitting, lazy loading, and Redux state management."
+        ],
+        "tags": ["React.js", "Next.js", "TypeScript", "Redux", "Tailwind CSS", "REST API"]
+      },
+      {
+        "company": "Vision Dimensions",
+        "role": "Frontend Developer",
+        "type": "Full-time",
+        "period": "Jul 2024 – Jun 2025",
+        "points": [
+          "Built \"New Vision\" — a multi-tenant operations dashboard enabling businesses to manage users, employees, and customers across multiple independent entities from a single interface.",
+          "Designed customizable, role-based admin features and delivered scalable solutions using Next.js, TypeScript, Tailwind CSS, Material UI, and React Query."
+        ],
+        "tags": ["Next.js", "TypeScript", "Tailwind CSS", "MUI", "React Query"]
+      },
+      {
+        "company": "ILLA",
+        "role": "Frontend Developer",
+        "type": "Internship",
+        "period": "Mar 2024 – Jul 2024",
+        "points": [
+          "Developed \"Front Door\" and \"Driver Admin\" — logistics UIs for FMCG supply chain with responsive, accessible Next.js and Ant Design interfaces.",
+          "Delivered production-quality code in a cross-functional team environment."
+        ],
+        "tags": ["Next.js", "Ant Design", "TypeScript"]
+      }
+    ]
   },
   "skills": {
     "label": "Skills",
@@ -54,6 +102,10 @@
     "label": "Projects",
     "title": "Selected Work",
     "subtitle": "A collection of projects I've built — from full-stack apps to polished UIs.",
+    "featured_label": "Featured Work",
+    "featured_title": "Selected Projects",
+    "featured_drag": "Drag to explore",
+    "featured_badge": "Featured",
     "filters": {
       "all": "All",
       "production": "Production",
@@ -64,7 +116,8 @@
     },
     "live": "Live",
     "code": "Code",
-    "view_all": "View All Projects"
+    "view_all": "View All",
+    "show_less": "Show Less"
   },
   "contact": {
     "label": "Contact",

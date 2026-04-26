@@ -67,7 +67,7 @@ export function ParticleCanvas() {
         // dot
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(99,102,241,' + p.alpha + ')'
+        ctx.fillStyle = 'rgba(200,245,81,' + p.alpha + ')'
         ctx.fill()
 
         // particle-to-particle lines
@@ -80,7 +80,7 @@ export function ParticleCanvas() {
             ctx.beginPath()
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(q.x, q.y)
-            ctx.strokeStyle = 'rgba(99,102,241,' + ((1 - d / CONNECT_DIST) * 0.18) + ')'
+            ctx.strokeStyle = 'rgba(200,245,81,' + ((1 - d / CONNECT_DIST) * 0.18) + ')'
             ctx.lineWidth = 0.6
             ctx.stroke()
           }

@@ -6,41 +6,44 @@
 
 /* ─── Design Tokens ─────────────────────────────── */
 :root {
-  /* Colors */
-  --clr-bg:           #050816;
-  --clr-bg-2:         #080d1c;
-  --clr-surface:      #0c1225;
-  --clr-surface-2:    #111827;
-  --clr-border:       rgba(255, 255, 255, 0.06);
-  --clr-border-2:     rgba(255, 255, 255, 0.10);
+  /* ── Colors ── */
+  --clr-bg:           #080808;
+  --clr-bg-2:         #0e0e0e;
+  --clr-surface:      #141414;
+  --clr-surface-2:    #1c1c1c;
+  --clr-border:       rgba(255, 255, 255, 0.07);
+  --clr-border-2:     rgba(255, 255, 255, 0.13);
 
-  /* Accent */
-  --clr-accent:       #6366f1;
-  --clr-accent-light: #818cf8;
-  --clr-accent-dark:  #4f46e5;
-  --clr-teal:         #14b8a6;
-  --clr-teal-light:   #2dd4bf;
-  --clr-violet:       #a78bfa;
+  /* ── Accent: Electric Lime ── */
+  --clr-accent:       #c8f551;
+  --clr-accent-light: #d4fa6a;
+  --clr-accent-dark:  #a8d93a;
+  --clr-accent-rgb:   200, 245, 81;
 
-  /* Text */
-  --clr-text:         #f1f5f9;
-  --clr-text-2:       #94a3b8;
-  --clr-text-3:       #64748b;
+  /* ── Supporting tones ── */
+  --clr-teal:         #c8f551;
+  --clr-teal-light:   #d4fa6a;
+  --clr-violet:       #f0e85a;
 
-  /* Gradients */
-  --grad-accent:      linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #14b8a6 100%);
-  --grad-text:        linear-gradient(135deg, #e0e7ff 0%, #818cf8 50%, #2dd4bf 100%);
-  --grad-card:        linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(20,184,166,0.04) 100%);
-  --grad-hero-orb-1:  radial-gradient(ellipse at center, rgba(99,102,241,0.35) 0%, transparent 70%);
-  --grad-hero-orb-2:  radial-gradient(ellipse at center, rgba(20,184,166,0.25) 0%, transparent 70%);
-  --grad-hero-orb-3:  radial-gradient(ellipse at center, rgba(139,92,246,0.20) 0%, transparent 70%);
+  /* ── Text ── */
+  --clr-text:         #f0ede8;
+  --clr-text-2:       #8a8880;
+  --clr-text-3:       #555552;
 
-  /* Shadows */
-  --shadow-sm:        0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md:        0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.04);
-  --shadow-lg:        0 8px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05);
-  --shadow-glow:      0 0 40px rgba(99, 102, 241, 0.18);
-  --shadow-glow-teal: 0 0 32px rgba(20, 184, 166, 0.18);
+  /* ── Gradients ── */
+  --grad-accent:      linear-gradient(135deg, #c8f551 0%, #a8d93a 100%);
+  --grad-text:        linear-gradient(135deg, #f0ede8 0%, #c8f551 60%, #d4fa6a 100%);
+  --grad-card:        linear-gradient(135deg, rgba(200,245,81,0.05) 0%, rgba(200,245,81,0.02) 100%);
+  --grad-hero-orb-1:  radial-gradient(ellipse at center, rgba(200,245,81,0.18) 0%, transparent 70%);
+  --grad-hero-orb-2:  radial-gradient(ellipse at center, rgba(200,245,81,0.10) 0%, transparent 70%);
+  --grad-hero-orb-3:  radial-gradient(ellipse at center, rgba(200,245,81,0.07) 0%, transparent 70%);
+
+  /* ── Shadows ── */
+  --shadow-sm:        0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md:        0 4px 24px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.04);
+  --shadow-lg:        0 8px 48px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.05);
+  --shadow-glow:      0 0 40px rgba(200, 245, 81, 0.15);
+  --shadow-glow-teal: 0 0 32px rgba(200, 245, 81, 0.12);
 
   /* Typography */
   --font-display:  'Sora', sans-serif;
@@ -125,8 +128,8 @@ ul, ol { list-style: none; }
 
 /* ─── Selection ─────────────────────────────────── */
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: var(--clr-text);
+  background: rgba(200, 245, 81, 0.25);
+  color: #080808;
 }
 
 /* ─── Container ─────────────────────────────────── */
@@ -168,7 +171,7 @@ ul, ol { list-style: none; }
 
 /* ─── Glass Card ─────────────────────────────────── */
 .glass-card {
-  background: rgba(13, 18, 37, 0.7);
+  background: rgba(20, 20, 20, 0.75);
   border: 1px solid var(--clr-border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -176,8 +179,13 @@ ul, ol { list-style: none; }
 }
 
 .glass-card:hover {
-  border-color: var(--clr-border-2);
+  border-color: rgba(200, 245, 81, 0.2);
   box-shadow: var(--shadow-glow);
+}
+
+/* ─── Custom cursor — hide default when cursor is active ── */
+body.has-custom-cursor * {
+  cursor: none !important;
 }
 
 /* ─── Focus Visible ──────────────────────────────── */
@@ -206,4 +214,123 @@ ul, ol { list-style: none; }
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE — Mobile first adjustments
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Tablet (≤ 900px) ───────────────────────────── */
+@media (max-width: 900px) {
+  :root {
+    --section-padding: 80px 0;
+    --container-pad: clamp(16px, 4vw, 48px);
+  }
+
+  /* Skills grid: 2 columns */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ─── Mobile (≤ 640px) ───────────────────────────── */
+@media (max-width: 640px) {
+  :root {
+    --section-padding: 64px 0;
+    --nav-height: 60px;
+    --container-pad: 20px;
+  }
+
+  /* ── Section headings ── */
+  .section-heading-title {
+    font-size: clamp(24px, 8vw, 36px) !important;
+  }
+
+  /* ── Projects grid → 1 column ── */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* ── Skills grid → 1 column ── */
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Filter pills → wrap nicely ── */
+  .filter-pills {
+    gap: 6px !important;
+  }
+
+  .filter-pills button {
+    padding: 7px 14px !important;
+    font-size: 12px !important;
+  }
+
+  /* ── Hero CTA buttons → stack vertically ── */
+  .hero-cta-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  /* ── About layout → single column ── */
+  .about-layout {
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  /* ── About stats row → 3 equal columns ── */
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* ── Contact layout → column ── */
+  .contact-layout {
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  /* ── Featured carousel cards → slightly smaller ── */
+  .swiper-slide {
+    width: 260px !important;
+  }
+
+  /* ── Footer → center align ── */
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+  }
+
+  /* ── Ticker strip ── */
+  .ticker-strip {
+    padding-block: 12px !important;
+  }
+}
+
+/* ─── Very small (≤ 400px) ──────────────────────── */
+@media (max-width: 400px) {
+  :root {
+    --container-pad: 16px;
+  }
+
+  /* About stats → 2 columns if 3 doesn't fit */
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ─── Ripple Wave (click effect on CTA buttons) ──── */
+@keyframes ripple-wave {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
 }

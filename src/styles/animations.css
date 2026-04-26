@@ -109,3 +109,111 @@
 .anim-fade-in   { animation: fade-in 0.5s ease forwards; }
 .anim-scale-in  { animation: scale-in 0.5s var(--t-spring) forwards; }
 .anim-glow      { animation: glow-pulse 3s ease-in-out infinite; }
+
+/* ═══════════════════════════════════════════════════
+   PENTAGRAM ANIMATIONS
+   ═══════════════════════════════════════════════════ */
+
+/* ─── Swiper grab cursor ──────────────────────────── */
+.swiper { cursor: grab; }
+.swiper:active { cursor: grabbing; }
+.swiper-wrapper { cursor: grab; }
+.swiper-wrapper:active { cursor: grabbing; }
+
+/* ─── Image blur-up lazy load ─────────────────────── */
+img[loading="lazy"] {
+  transition: opacity 300ms ease;
+}
+
+/* ─── Horizontal scroll hint arrow ───────────────── */
+@keyframes scroll-hint {
+  0%   { transform: translateX(0); opacity: 1; }
+  60%  { transform: translateX(8px); opacity: 0.5; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* ─── Featured card image — scale on hover ────────── */
+.featured-card-img {
+  transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* ─── Pentagram title underline on hover ─────────── */
+.p-title-hover {
+  text-decoration: none;
+  text-underline-offset: 3px;
+  transition: text-decoration 150ms ease;
+}
+.p-title-hover:hover {
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── Navbar hide/show transition ────────────────── */
+/* Handled by Framer Motion y: hidden ? -90 : 0       */
+
+/* ─── Mobile overlay fade ─────────────────────────── */
+/* Handled by Framer Motion AnimatePresence            */
+
+/* ─── Ticker / Marquee strip ─────────────────────── */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 28s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Ticker container ────────────────────────────── */
+.ticker-strip {
+  overflow: hidden;
+  position: relative;
+}
+
+/* fade edges */
+.ticker-strip::before,
+.ticker-strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ticker-strip::before {
+  left: 0;
+  background: linear-gradient(to right, var(--clr-bg), transparent);
+}
+
+.ticker-strip::after {
+  right: 0;
+  background: linear-gradient(to left, var(--clr-bg), transparent);
+}
+
+/* ─── Section image parallax ─────────────────────── */
+.parallax-img {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* ─── Pentagram line draw ────────────────────────── */
+.p-line-draw {
+  width: 0;
+  height: 1px;
+  background: var(--clr-border-2);
+  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.p-line-draw.visible {
+  width: 100%;
+}

@@ -1,82 +1,115 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { useForm } from '@formspree/react'
-import { Mail, MapPin, CheckCircle, Send, Download, FileText } from 'lucide-react'
+import { Mail, MapPin, CheckCircle, Download, Github, Linkedin, Twitter } from 'lucide-react'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { staggerContainer, staggerItem } from '../animations/motionVariants'
-import Lottie from 'lottie-react'
-import contactAnim from '../animation/contact/contact.json.json'
+import { MagneticButton } from '../components/ui/MagneticButton'
 
-function InputField({ label, id, type = 'text', textarea, value, onChange, placeholder, required }) {
-  const [focused, setFocused] = useState(false)
-
-  const base = {
-    width: '100%',
-    padding: '13px 16px',
-    borderRadius: 'var(--r-md)',
-    border: '1.5px solid ' + (focused ? 'rgba(99,102,241,0.5)' : 'var(--clr-border)'),
-    background: focused ? 'rgba(99,102,241,0.05)' : 'rgba(255,255,255,0.03)',
-    color: 'var(--clr-text)',
-    fontSize: '14px',
-    fontFamily: 'var(--font-body)',
-    outline: 'none',
-    transition: 'all var(--t-fast)',
-    resize: textarea ? 'vertical' : undefined,
-    minHeight: textarea ? '128px' : undefined,
-  }
-
+// ─── Info Card ────────────────────────────────────────────
+function InfoCard({ icon: Icon, label, value, href, index }) {
   return (
-    <div>
-      <label
-        htmlFor={id}
-        style={{
-          display: 'block',
-          fontSize: '12px', fontWeight: 500,
-          color: 'var(--clr-text-2)',
-          marginBottom: '6px',
-          letterSpacing: '0.04em',
-        }}
-      >
-        {label}
-        {required && <span style={{ color: 'var(--clr-accent)', marginInlineStart: '3px' }}>*</span>}
-      </label>
-      {textarea ? (
-        <textarea
-          id={id}
-          name={id}
-          value={value}
-          onChange={onChange}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          placeholder={placeholder}
-          required={required}
-          style={base}
-        />
-      ) : (
-        <input
-          id={id}
-          name={id}
-          type={type}
-          value={value}
-          onChange={onChange}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          placeholder={placeholder}
-          required={required}
-          style={base}
-        />
-      )}
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+      whileHover={{ y: -4, borderColor: 'rgba(200,245,81,0.25)' }}
+      style={{
+        padding: '28px 32px',
+        background: 'var(--clr-surface)',
+        border: '1px solid var(--clr-border)',
+        borderRadius: 'var(--r-xl)',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '20px',
+        transition: 'border-color var(--t-normal), box-shadow var(--t-normal)',
+        cursor: href ? 'pointer' : 'default',
+      }}
+      onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--shadow-glow)' }}
+      onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none' }}
+    >
+      {/* Icon */}
+      <div style={{
+        width: 48, height: 48,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        borderRadius: 'var(--r-lg)',
+        background: 'rgba(200,245,81,0.07)',
+        border: '1px solid rgba(200,245,81,0.18)',
+        color: '#c8f551',
+        flexShrink: 0,
+      }}>
+        <Icon size={20} />
+      </div>
+
+      {/* Text */}
+      <div>
+        <p style={{
+          fontSize: '11px',
+          color: 'var(--clr-text-3)',
+          fontFamily: 'var(--font-mono)',
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          marginBottom: '4px',
+        }}>
+          {label}
+        </p>
+        {href ? (
+          <a
+            href={href}
+            style={{
+              fontSize: '15px', fontWeight: 600,
+              color: 'var(--clr-text)',
+              transition: 'color var(--t-fast)',
+              wordBreak: 'break-all',
+            }}
+            onMouseEnter={(e) => e.target.style.color = '#c8f551'}
+            onMouseLeave={(e) => e.target.style.color = 'var(--clr-text)'}
+          >
+            {value}
+          </a>
+        ) : (
+          <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--clr-text)' }}>
+            {value}
+          </p>
+        )}
+      </div>
+    </motion.div>
   )
 }
 
+// ─── Social Link ──────────────────────────────────────────
+const SOCIALS = [
+  { icon: Github,   href: 'https://github.com/Abdullahhosny58', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://linkedin.com',               label: 'LinkedIn' },
+  { icon: Twitter,  href: 'https://twitter.com',                label: 'Twitter' },
+]
+
+// ─── Contact Section ──────────────────────────────────────
 export function Contact() {
   const { t } = useTranslation()
-  const [state, handleFormspreeSubmit] = useForm('xeqbvegd')
+
+  const infoItems = [
+    {
+      icon: Mail,
+      label: t('contact.info.email_label'),
+      value: t('contact.info.email'),
+      href: 'mailto:' + t('contact.info.email'),
+    },
+    {
+      icon: MapPin,
+      label: t('contact.info.location_label'),
+      value: t('contact.info.location'),
+      href: null,
+    },
+    {
+      icon: CheckCircle,
+      label: t('contact.info.availability_label'),
+      value: t('contact.info.availability'),
+      href: null,
+    },
+  ]
 
   return (
-    <section id="contact" className="section" style={{ background: 'var(--clr-bg-2)' }}>
+    <section id="contact" className="section">
       <div className="container">
         <SectionHeading
           label={t('contact.label')}
@@ -85,236 +118,110 @@ export function Contact() {
           align="center"
         />
 
+        {/* Info Cards Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '48px',
-          alignItems: 'start',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
+          gap: '16px',
+          marginBottom: '48px',
+          maxWidth: '860px',
+          marginInline: 'auto',
         }}>
-          {/* Left — Info */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-          >
-            {/* Lottie Animation */}
-            <div style={{ width: '100%', maxWidth: '280px', marginBottom: '32px' }}>
-              <Lottie animationData={contactAnim} loop autoplay style={{ width: '100%' }} />
-            </div>
+          {infoItems.map((item, i) => (
+            <InfoCard key={item.label} {...item} index={i} />
+          ))}
+        </div>
 
-            {/* Contact Info Items */}
-            {[
-              { icon: Mail,        labelKey: 'contact.info.email_label',        valueKey: 'contact.info.email',        href: 'mailto:' + t('contact.info.email') },
-              { icon: MapPin,      labelKey: 'contact.info.location_label',     valueKey: 'contact.info.location',     href: null },
-              { icon: CheckCircle, labelKey: 'contact.info.availability_label', valueKey: 'contact.info.availability', href: null },
-            ].map(({ icon: Icon, labelKey, valueKey, href }) => (
-              <motion.div
-                key={labelKey}
-                variants={staggerItem}
+        {/* Bottom row — social + CV */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '28px',
+          }}
+        >
+          {/* Social icons */}
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            {SOCIALS.map(({ icon: Icon, href, label }, i) => (
+              <motion.a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                initial={{ opacity: 0, scale: 0.7 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 + i * 0.07, duration: 0.3, type: 'spring', stiffness: 300 }}
+                whileHover={{ scale: 1.15, y: -3 }}
+                whileTap={{ scale: 0.92 }}
                 style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '14px',
-                  marginBottom: '20px',
-                }}
-              >
-                <div style={{
-                  width: 40, height: 40,
+                  width: 44, height: 44,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   borderRadius: 'var(--r-md)',
-                  background: 'rgba(99,102,241,0.1)',
-                  border: '1px solid rgba(99,102,241,0.2)',
-                  flexShrink: 0,
-                  color: 'var(--clr-accent-light)',
-                }}>
-                  <Icon size={16} />
-                </div>
-                <div>
-                  <p style={{ fontSize: '11px', color: 'var(--clr-text-3)', marginBottom: '2px', letterSpacing: '0.04em' }}>
-                    {t(labelKey)}
-                  </p>
-                  {href ? (
-                    <a
-                      href={href}
-                      style={{
-                        fontSize: '14px', fontWeight: 500, color: 'var(--clr-text)',
-                        transition: 'color var(--t-fast)',
-                      }}
-                      onMouseEnter={(e) => e.target.style.color = 'var(--clr-accent-light)'}
-                      onMouseLeave={(e) => e.target.style.color = 'var(--clr-text)'}
-                    >
-                      {t(valueKey)}
-                    </a>
-                  ) : (
-                    <p style={{ fontSize: '14px', fontWeight: 500, color: 'var(--clr-text)' }}>
-                      {t(valueKey)}
-                    </p>
-                  )}
-                </div>
-              </motion.div>
+                  border: '1px solid var(--clr-border)',
+                  background: 'rgba(255,255,255,0.03)',
+                  color: 'var(--clr-text-3)',
+                  transition: 'all var(--t-fast)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#c8f551'
+                  e.currentTarget.style.borderColor = 'rgba(200,245,81,0.35)'
+                  e.currentTarget.style.background = 'rgba(200,245,81,0.07)'
+                  e.currentTarget.style.boxShadow = 'var(--shadow-glow)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--clr-text-3)'
+                  e.currentTarget.style.borderColor = 'var(--clr-border)'
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.03)'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              >
+                <Icon size={18} />
+              </motion.a>
             ))}
+          </div>
 
-            {/* CV Download Block */}
-            <motion.div
-              variants={staggerItem}
+          {/* CV download */}
+          <MagneticButton strength={0.25}>
+            <motion.a
+              href="/cv-en.pdf"
+              download="Abdullah-Hosny-CV.pdf"
+              whileTap={{ scale: 0.97 }}
               style={{
-                marginTop: '32px',
-                padding: '20px',
-                background: 'rgba(99,102,241,0.07)',
-                border: '1px solid rgba(99,102,241,0.2)',
-                borderRadius: 'var(--r-lg)',
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                padding: '13px 32px',
+                borderRadius: 'var(--r-md)',
+                background: 'transparent',
+                color: 'var(--clr-text)',
+                fontSize: '14px', fontWeight: 500,
+                border: '1px solid var(--clr-border-2)',
+                transition: 'all var(--t-normal)',
+                letterSpacing: '0.01em',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(200,245,81,0.45)'
+                e.currentTarget.style.color = '#c8f551'
+                e.currentTarget.style.background = 'rgba(200,245,81,0.06)'
+                e.currentTarget.style.boxShadow = '0 0 24px rgba(200,245,81,0.1)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--clr-border-2)'
+                e.currentTarget.style.color = 'var(--clr-text)'
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <FileText size={18} style={{ color: 'var(--clr-accent-light)' }} />
-                <p style={{ fontWeight: 600, fontSize: '14px', color: 'var(--clr-text)' }}>
-                  {t('cv.title')}
-                </p>
-              </div>
-              <p style={{ fontSize: '12px', color: 'var(--clr-text-2)', marginBottom: '16px', lineHeight: 1.6 }}>
-                {t('cv.subtitle')}
-              </p>
-              <motion.a
-                href="/cv-en.pdf"
-                download="Abdullah-Hosny-CV.pdf"
-                whileHover={{ scale: 1.04, y: -1 }}
-                whileTap={{ scale: 0.97 }}
-                style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                  padding: '11px 20px',
-                  borderRadius: 'var(--r-md)',
-                  background: 'var(--grad-accent)',
-                  color: '#fff',
-                  fontSize: '13px', fontWeight: 600,
-                  boxShadow: '0 4px 16px rgba(99,102,241,0.3)',
-                  whiteSpace: 'nowrap',
-                  width: '100%',
-                }}
-              >
-                <Download size={14} />
-                {t('cv.download')}
-              </motion.a>
-            </motion.div>
-          </motion.div>
-
-          {/* Right — Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 32 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{
-              padding: '36px',
-              background: 'rgba(12,18,37,0.8)',
-              border: '1px solid var(--clr-border)',
-              borderRadius: 'var(--r-xl)',
-              backdropFilter: 'blur(12px)',
-            }}
-          >
-            {state.succeeded ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, type: 'spring', stiffness: 200 }}
-                style={{
-                  textAlign: 'center',
-                  padding: '40px 20px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '16px',
-                }}
-              >
-                <motion.div
-                  animate={{ scale: [0.8, 1.2, 1] }}
-                  transition={{ duration: 0.5 }}
-                  style={{
-                    width: 64, height: 64,
-                    background: 'rgba(20,184,166,0.15)',
-                    borderRadius: '50%',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  }}
-                >
-                  <CheckCircle size={32} style={{ color: 'var(--clr-teal)' }} />
-                </motion.div>
-                <h3 style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '20px', fontWeight: 700,
-                  color: 'var(--clr-text)',
-                }}>
-                  {t('contact.form.success')}
-                </h3>
-              </motion.div>
-            ) : (
-              <form onSubmit={handleFormspreeSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                <InputField
-                  id="name"
-                  label={t('contact.form.name')}
-                  placeholder="John Doe"
-                  required
-                />
-                <InputField
-                  id="email"
-                  type="email"
-                  label={t('contact.form.email')}
-                  placeholder="john@example.com"
-                  required
-                />
-                <InputField
-                  id="message"
-                  label={t('contact.form.message')}
-                  placeholder="Tell me about your project..."
-                  textarea
-                  required
-                />
-                <motion.button
-                  type="submit"
-                  disabled={state.submitting}
-                  whileHover={!state.submitting ? { scale: 1.02, y: -1 } : {}}
-                  whileTap={!state.submitting ? { scale: 0.98 } : {}}
-                  style={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                    width: '100%',
-                    padding: '14px',
-                    borderRadius: 'var(--r-md)',
-                    background: state.submitting ? 'rgba(99,102,241,0.5)' : 'var(--grad-accent)',
-                    color: '#fff',
-                    fontSize: '15px', fontWeight: 600,
-                    border: 'none',
-                    cursor: state.submitting ? 'not-allowed' : 'pointer',
-                    boxShadow: '0 6px 24px rgba(99,102,241,0.35)',
-                    transition: 'all var(--t-normal)',
-                    marginTop: '4px',
-                  }}
-                >
-                  {state.submitting ? (
-                    <>
-                      <div style={{
-                        width: 16, height: 16,
-                        border: '2px solid rgba(255,255,255,0.3)',
-                        borderTopColor: '#fff',
-                        borderRadius: '50%',
-                        animation: 'spin-slow 0.8s linear infinite',
-                      }} />
-                      {t('contact.form.sending')}
-                    </>
-                  ) : (
-                    <>
-                      <Send size={16} />
-                      {t('contact.form.send')}
-                    </>
-                  )}
-                </motion.button>
-                {state.errors && state.errors.length > 0 && (
-                  <p style={{ color: '#f87171', fontSize: '13px', textAlign: 'center' }}>
-                    {t('contact.form.error')}
-                  </p>
-                )}
-              </form>
-            )}
-          </motion.div>
-        </div>
+              <Download size={15} />
+              {t('cv.download')}
+            </motion.a>
+          </MagneticButton>
+        </motion.div>
       </div>
     </section>
   )

@@ -43,7 +43,7 @@ export function Footer() {
 
         {/* Nav Links */}
         <nav style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {['hero', 'about', 'skills', 'projects', 'contact'].map((sec) => (
+          {['hero', 'about', 'experience', 'skills', 'projects', 'contact'].map((sec) => (
             <a
               key={sec}
               href={'#' + sec}
@@ -82,8 +82,8 @@ export function Footer() {
                 transition: 'all var(--t-fast)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(99,102,241,0.12)'
-                e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)'
+                e.currentTarget.style.background = 'rgba(200,245,81,0.08)'
+                e.currentTarget.style.borderColor = 'rgba(200,245,81,0.3)'
                 e.currentTarget.style.color = 'var(--clr-accent-light)'
               }}
               onMouseLeave={(e) => {

@@ -119,15 +119,42 @@ export const buttonHover = {
 // ─── Navbar ───────────────────────────────────────
 export const navbarVariants = {
   top: {
-    backgroundColor: 'rgba(5, 8, 22, 0)',
+    backgroundColor: 'rgba(8, 8, 8, 0)',
     backdropFilter: 'blur(0px)',
     borderBottomColor: 'rgba(255,255,255,0)',
   },
   scrolled: {
-    backgroundColor: 'rgba(5, 8, 22, 0.85)',
+    backgroundColor: 'rgba(8, 8, 8, 0.9)',
     backdropFilter: 'blur(20px)',
-    borderBottomColor: 'rgba(255,255,255,0.06)',
+    borderBottomColor: 'rgba(255,255,255,0.07)',
   },
+}
+
+// ─── Curtain Line Reveal (Motto-style) ────────────
+// Wrap element in overflow-hidden, animate from y:101% → y:0
+export const lineReveal = {
+  hidden: { y: '101%' },
+  visible: (custom = 0) => ({
+    y: '0%',
+    transition: {
+      duration: 0.8,
+      delay: custom * 0.08,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
+}
+
+// ─── Clip-path curtain (left to right) ────────────
+export const curtainReveal = {
+  hidden: { clipPath: 'inset(0 100% 0 0)' },
+  visible: (custom = 0) => ({
+    clipPath: 'inset(0 0% 0 0)',
+    transition: {
+      duration: 0.9,
+      delay: custom * 0.1,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
 }
 
 // ─── Mobile Menu ──────────────────────────────────
@@ -164,3 +191,48 @@ export const barFill = (level) => ({
     transition: { duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 },
   },
 })
+
+// ─── Pentagram Reveal ─────────────────────────────
+// Clean translateY + opacity, Pentagram's signature easing
+export const pentagramReveal = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+// ─── Pentagram Stagger Container ──────────────────
+export const pentagramStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+}
+
+// ─── Pentagram Stagger Item ───────────────────────
+export const pentagramStaggerItem = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+// ─── Pentagram Image Reveal ───────────────────────
+// Scale from 1.05 + clip-path reveal for section images
+export const pentagramImageReveal = {
+  hidden: { opacity: 0, scale: 1.05, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}

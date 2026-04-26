@@ -5,13 +5,14 @@ import { SectionHeading } from '../components/ui/SectionHeading'
 import { skills } from '../data/content'
 
 const categoryColors = {
-  frontend:   { bg: 'rgba(99,102,241,0.1)',  border: 'rgba(99,102,241,0.25)',  text: '#818cf8' },
+  frontend:   { bg: 'rgba(200,245,81,0.08)', border: 'rgba(200,245,81,0.25)',  text: '#c8f551' },
   frameworks: { bg: 'rgba(255,255,255,0.06)', border: 'rgba(255,255,255,0.15)', text: '#e2e8f0' },
   styling:    { bg: 'rgba(20,184,166,0.1)',   border: 'rgba(20,184,166,0.25)',  text: '#2dd4bf' },
   tools:      { bg: 'rgba(167,139,250,0.1)',  border: 'rgba(167,139,250,0.25)', text: '#c4b5fd' },
 }
 
 function SkillCard({ skill, index }) {
+  const { t } = useTranslation()
   const colors = categoryColors[skill.category] || categoryColors.tools
 
   return (
@@ -92,7 +93,7 @@ function SkillCard({ skill, index }) {
           letterSpacing: '0.06em',
           textTransform: 'uppercase',
         }}>
-          {skill.category}
+          {t(`skills.categories.${skill.category}`, skill.category)}
         </span>
         <span style={{
           fontSize: '11px', fontWeight: 600,
@@ -129,6 +130,7 @@ export function Skills() {
           label={t('skills.label')}
           title={t('skills.title')}
           subtitle={t('skills.subtitle')}
+          index="02"
         />
 
         {/* Category Filter Tabs */}
@@ -158,8 +160,8 @@ export function Skills() {
                   fontSize: '13px', fontWeight: isActive ? 600 : 400,
                   cursor: 'pointer',
                   border: '1px solid',
-                  borderColor: isActive ? 'rgba(99,102,241,0.5)' : 'var(--clr-border)',
-                  background: isActive ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.03)',
+                  borderColor: isActive ? 'rgba(200,245,81,0.4)' : 'var(--clr-border)',
+                  background: isActive ? 'rgba(200,245,81,0.1)' : 'rgba(255,255,255,0.03)',
                   color: isActive ? 'var(--clr-accent-light)' : 'var(--clr-text-2)',
                   transition: 'all var(--t-fast)',
                 }}
@@ -173,9 +175,10 @@ export function Skills() {
         {/* Skills Grid */}
         <motion.div
           layout
+          className="skills-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(200px, 100%), 1fr))',
             gap: '16px',
           }}
         >

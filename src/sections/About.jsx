@@ -2,7 +2,15 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { staggerContainer, staggerItem } from '../animations/motionVariants'
+import { WordReveal } from '../components/animations/WordReveal'
+import { useCountUp } from '../hooks/useCountUp'
+import {
+  staggerContainer,
+  staggerItem,
+  pentagramStagger,
+  pentagramStaggerItem,
+  pentagramImageReveal,
+} from '../animations/motionVariants'
 
 const techStack = [
   'React.js', 'Next.js', 'TypeScript', 'Redux',
@@ -10,12 +18,13 @@ const techStack = [
 ]
 
 function StatCard({ number, label, color = 'var(--clr-accent-light)' }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
+  const { ref, display } = useCountUp(number, { duration: 1.6 })
+  const wrapRef = useRef(null)
+  const inView = useInView(wrapRef, { once: true, margin: '-40px' })
 
   return (
     <motion.div
-      ref={ref}
+      ref={wrapRef}
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -30,17 +39,21 @@ function StatCard({ number, label, color = 'var(--clr-accent-light)' }) {
         transition: 'border-color var(--t-normal)',
         cursor: 'default',
       }}
-      whileHover={{ borderColor: 'var(--clr-border-2)', y: -2 }}
+      whileHover={{ borderColor: 'rgba(200,245,81,0.2)', y: -2 }}
     >
-      <span style={{
-        fontFamily: 'var(--font-display)',
-        fontSize: 'clamp(36px, 4vw, 48px)',
-        fontWeight: 800,
-        lineHeight: 1,
-        color,
-        letterSpacing: '-0.03em',
-      }}>
-        {number}
+      <span
+        ref={ref}
+        style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(36px, 4vw, 48px)',
+          fontWeight: 800,
+          lineHeight: 1,
+          color,
+          letterSpacing: '-0.03em',
+          fontVariantNumeric: 'tabular-nums',
+        }}
+      >
+        {display}
       </span>
       <span style={{
         fontSize: '13px',
@@ -67,36 +80,45 @@ export function About() {
           alignItems: 'center',
         }}>
           {/* Left — Text */}
-          <div>
-            <SectionHeading
-              label={t('about.label')}
-              title={t('about.title')}
-            />
+          <motion.div
+            variants={pentagramStagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+          >
+            <motion.div variants={pentagramStaggerItem}>
+              <SectionHeading
+                label={t('about.label')}
+                title={t('about.title')}
+                index="01"
+              />
+            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <p style={{
-                fontSize: 'clamp(15px, 1.7vw, 17px)',
-                color: 'var(--clr-text-2)',
-                lineHeight: 1.8,
-                marginBottom: '20px',
-              }}>
-                {t('about.para1')}
-              </p>
-              <p style={{
-                fontSize: 'clamp(15px, 1.7vw, 17px)',
-                color: 'var(--clr-text-2)',
-                lineHeight: 1.8,
-                marginBottom: '36px',
-              }}>
-                {t('about.para2')}
-              </p>
+            <motion.div variants={pentagramStaggerItem}>
+              <WordReveal
+                text={t('about.para1')}
+                style={{
+                  fontSize: 'clamp(15px, 1.7vw, 17px)',
+                  color: 'var(--clr-text-2)',
+                  marginBottom: '20px',
+                }}
+              />
+            </motion.div>
 
-              {/* Tech Stack Tags */}
+            <motion.div variants={pentagramStaggerItem}>
+              <WordReveal
+                text={t('about.para2')}
+                delay={0.1}
+                style={{
+                  fontSize: 'clamp(15px, 1.7vw, 17px)',
+                  color: 'var(--clr-text-2)',
+                  marginBottom: '36px',
+                }}
+              />
+            </motion.div>
+
+            {/* Tech Stack Tags */}
+            <motion.div variants={pentagramStaggerItem}>
               <p style={{
                 fontSize: '11px',
                 color: 'var(--clr-text-3)',
@@ -131,8 +153,8 @@ export function About() {
                       cursor: 'default',
                     }}
                     whileHover={{
-                      background: 'rgba(99,102,241,0.1)',
-                      borderColor: 'rgba(99,102,241,0.35)',
+                      background: 'rgba(200,245,81,0.08)',
+                      borderColor: 'rgba(200,245,81,0.3)',
                       color: 'var(--clr-accent-light)',
                     }}
                   >
@@ -141,16 +163,19 @@ export function About() {
                 ))}
               </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Right — Stats + Image */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+          <motion.div
+            variants={pentagramStagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}
+          >
             {/* Avatar */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.7, ease: [0.34, 1.56, 0.64, 1] }}
+              variants={pentagramImageReveal}
               style={{ position: 'relative', alignSelf: 'flex-start' }}
             >
               <div style={{
@@ -198,16 +223,20 @@ export function About() {
                   boxShadow: 'var(--shadow-glow-teal)',
                 }}
               >
-                ✦ Open to Work
+                ✦ {t('about.open_to_work')}
               </motion.div>
             </motion.div>
 
             {/* Stats Grid */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '12px',
-            }}>
+            <motion.div
+              variants={pentagramStaggerItem}
+              className="about-stats"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '12px',
+              }}
+            >
               <StatCard
                 number={stats.experience}
                 label={stats.experience_label}
@@ -223,8 +252,8 @@ export function About() {
                 label={stats.tech_label}
                 color="var(--clr-violet)"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
